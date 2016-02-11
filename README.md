@@ -68,26 +68,106 @@ git remote -v
 
 ##Making changes to your Repo
 
+###Your First Changes
 Now that your have clone the repo we want to actually make changes to the files. 
 
 The first step is to actually edit this readme file!
+
+Make sure your are in local repo, and enter:
+
+```
+nano README.md
+```
+
+Now that you are in the file, change the information in the table below to your info
 
 | Name        | Username           | # of Repos  |
 | ------------- |:-------------:| -----:|
 | John Doe      | jdoe | 0 |
 
+After you make your changes, press CRTL + X and then Y
 
+###Something More Interesting
+
+Now we want you to edit the R script ANES.R
+
+The data for this exercise are from the 2008 American National Election Study
+
+- V08001 is the respondent’s case id, a unique identifier for each respondent.
+- V085044a is the vote choice in the 2008 presidential election.
+- V083097 is party identification on a 3-point scale.
+- V081101 is respondent’s gender. 
+- V083248 is respondent’s household income in 25 categories.
+- V083057 is the respondent’s retrospective evaluation of the his/her personal finances.
+- V083083 is the respondent’s retrospective evaluation of the national economy.
+
+
+First update the working directory to the directory of your git repo. Then, edit the name of the data file in the R script. Now simply get the summary statistics for a variable in the dataset.
+
+
+
+### How to make git changes
 
 The git add command adds a change in the working directory to the staging area. It tells Git that you want to include updates to a particular file in the next commit.
+```
 git add *
-The git commit command commits the staged snapshot to the project history. Committed snapshots can be thought of as “safe” versions of a project—Git will never change them unless you explicitly ask it to.
-git commit -m "My First Commit"
-The git push command sends the staged snapshot to the remote repository.
-git remote push origin master
+```
 
+The git commit command commits the staged snapshot to the project history. Committed snapshots can be thought of as “safe” versions of a project—Git will never change them unless you explicitly ask it to.
+```
+git commit -m "My First Commit"
+```
+
+
+The git push command sends the staged snapshot to the remote repository.
+```
+git remote push origin master
+```
 
 ##Undo changes in your Repo
 
+The **git log** command displays committed snapshots. It lets you list the project history, filter it, and search for specific changes.
+```
+git log --oneline
+```
+
+The **git checkout** command serves three distinct functions: checking out files, checking out commits, and checking out branches. Checking out a file lets you see an old version of that particular file, leaving the rest of your working directory untouched.
+```
+git checkout <commit>
+git checkout master
+```
+
+## Useful Features
+
+The **git status** command can be used to determine which files are in which state.
+```
+git status -s
+```
+
+The **git diff** command can show you the differences between files
+
+Rather than track the entire local directory, you can tell git to follow only specific subdirectories or files.
+
+```
+git add ./Directory_name
+```
+
+or
+
+```
+git add your_file.py
+```
+
+
+You can use the **git rm** untrack a file or directory
+```
+git rm --cached filename
+
+git rm -r --cached "path/to/foo/"
+```
+
+
+Good guide for advance git editing : https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository
 
 ## Other Resources
 
