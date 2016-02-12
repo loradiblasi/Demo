@@ -83,7 +83,7 @@ Now that you are in the file, change the information in the table below to your 
 
 | Name        | Username           | # of Repos  |
 | ------------- |:-------------:| -----:|
-| John Doe      | jdoe | 0 |
+| Lora DiBlasi     | loradiblasi | 0 |
 
 After you make your changes, press CRTL + X and then Y
 
